@@ -68,3 +68,48 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 ```
+
+
+普及 C++ 字符串处理技巧。
+
+有一个函数叫作 `itoa`，但是它不是标准库函数，因此不作介绍。
+
+标准库只有一个支持该功能的函数 `std::to_chars`，需要 C++17 标准。但是可以在 GCC 9.3.0 C++14 标准下编译通过，因此 **可以** 在考场上使用。
+处理整数的函数原型 `std::to_chars_result to_chars(char* first, char* last, /*see below*/ value, int base = 10);`，不能使用 `bool`。功能是将 \textit{value}**value** 转化成 \textit{base}**base** 进制后写入 `char` 数组。
+返回值是一个 `std::to_chars_result` 类型，是一个结构体，定义如下：
+
+```cpp
+struct to_chars_result {
+  char* ptr;
+  std::errc ec;
+};
+```
+
+如果正常转换，\textit{ec}**ec** 将等于 `std::errc()`，\textit{ptr}**ptr** 指向最后一个写入字符的后一位。即最终范围是 [\textit{first},\textit{ptr})**[**first**,**ptr**)**。
+
+`std::to_chars` 在处理进制 \textit{base}>10**base**>**1**0 的情况时用的是小写字母，因此还需要转换成大写字母。
+
+代码如下，里面使用了 C++17 的语法结构化绑定和 `if` 初始化语句，但是都可以在 GCC 9.3.0 C++14 标准下编译通过，因此考场上 **可以** 使用这些语法。
+
+```cpp
+#include <algorithm>
+#include <cctype>
+#include <charconv>
+#include <iostream>
+#include <string>
+#include <system_error>
+int main(int argc, char const *argv[]) {
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr), std::cout.tie(nullptr);
+  int n, base;
+  char buf[101];
+  std::cin >> n >> base;
+  std::string s;
+  if (auto [p, e] = std::to_chars(buf, buf + 100, n, base); e == std::errc())
+    s = std::string(buf, p);
+  std::transform(s.begin(), s.end(), s.begin(),
+                 [](unsigned char c) { return std::toupper(c); });
+  std::cout << s;
+  return 0;
+}
+```
