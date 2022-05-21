@@ -5,6 +5,15 @@ def Add_URL(URL):
 
 Flag = False
 
+os.system("git remote -v")
+while True:
+    print("Please Input Origin You Want to Remove (Input EOF to Exit) :")
+    RM = input()
+    if RM == "EOF":
+        break
+    else:
+        os.system("git remote rm " + RM)
+
 while True:
     if Flag==False:
         print("Have you Added Origin 'All' already? (Input Y or N) :")
