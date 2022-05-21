@@ -1,12 +1,12 @@
 Ham Team 1号成员, 创始人, 执行董事长
 
-来自`Shaoxing, Zhejiang`
+来自 `Shaoxing, Zhejiang`
 
 AFO的OIer
 
 E-mail：`hackernick@ham.ac.cn`
 
-``` cpp
+```cpp
 2019-07-06 : 注册祭
 2021-10-15 : AC100祭
 2021-10-21 : AC200祭
@@ -18,8 +18,6 @@ E-mail：`hackernick@ham.ac.cn`
 水题情况（大多数CF的题都没有在洛谷上提交，洛谷太慢了www）：
 
 ![我的练习情况](https://luogu-card.vercel.app/practice?id=221987)
-
-
 
 $$
 \def{\cW}{ffffff} \def{\cB}{000000}
@@ -35,8 +33,8 @@ $$
 \newcommand{\t}[1]{\text{#1}} \newcommand{\k}[1]{\kern{#1}}
 \def\arraystretch{1.5}\begin{array}{|l|l|l|}\hline
 \t{普及-- 模板大全}&\t{续表} &\t{续表} \\\hline
-\N\a{并查集}&\N\a{快速幂-取余运算}&\N\a{线性筛素数}\\\hline
-\N\a{最小生成树}&\N\a{堆}&\N\a{快速排序}\\\hline
+\A\a{并查集}&\A\a{快速幂-取余运算}&\N\a{线性筛素数}\\\hline
+\A\a{最小生成树}&\A\a{堆}&\A\a{快速排序}\\\hline
 \N\a{字符串哈希}& & \\\hline
 \t{普及/提高-- 模板}&\t{续表} &\t{续表} \\\hline
 \N\b{单调队列}&\N\b{三分法}&\N\b{矩阵快速幂} \\\hline
@@ -94,4 +92,3 @@ $$
 \N\f{插头dp}&\N\f{类欧几里得算法}&\\\hline
 \end{array}
 $$
-
