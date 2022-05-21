@@ -23,5 +23,3 @@ while True:
         Flag = True
     else:
         Add_URL(URL)
-
-os.system("git config pull.ff only")
