@@ -1,39 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 typedef long long ll;
-typedef unsigned long long ull;
-
 #define il inline
 #define IOS ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-
 #define max(a,b) a>b?a:b
 #define min(a,b) a<b?a:b
 
-const int INF = 0x3f3f3f3f;
-
-struct Node
-{
-    double d,p;
-}N[7];
-
-double d1,c,d2,p,ans;
-ll n,m;
-
+ll ans,n,a[30],s[30],c;
 
 int main()
 {
-    cin>>d1>>c>>d2>>p>>n;
+    cin>>n;
     for(int i=1;i<=n;i++)
     {
-        cin>>N[i].d>>N[i].p;
+        cin>>a[i];
+        s[i]=s[i-1]+a[i];
+        c+=a[i];
     }
+    ll p=c/2;
     for(int i=1;i<=n;i++)
     {
-        if(N[i].p<N[m].p)
+        for(int j=1;j<=n;j++)
         {
-            m=i;
+            if(s[j]-s[i]==p)
+            {
+                ans++;
+            }
         }
     }
+    cout<<ans*(ans-1)/2;
     return 0;
 }
