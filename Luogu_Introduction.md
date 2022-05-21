@@ -1,5 +1,7 @@
 Ham Team 1号成员, 创始人, 执行董事长
 
+以前叫 `Hacker_Nick`，然后发现有些平台不能打下划线和大写字母，于是改为 `hackernick233`
+
 来自 `Shaoxing, Zhejiang`
 
 AFO的OIer
