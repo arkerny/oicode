@@ -6,7 +6,7 @@ Ham Team 1号成员, 创始人, 执行董事长
 
 AFO的OIer
 
-E-mail：`hackernick@ham.ac.cn`
+E-mail：`hackernick233@qq.com`（现在正在逐渐转移到这个账号里面） `hackernick@ham.ac.cn`（Ham Team的邮箱）`hackernick233@gmail.com`（国外注册用）
 
 ```cpp
 2019-07-06 : 注册祭
