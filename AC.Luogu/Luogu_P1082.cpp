@@ -12,26 +12,28 @@ typedef unsigned long long ull;
 
 const int INF = 0x3f3f3f3f;
 
-ll a,b,x,y;
+ll a, b, x, y;
 
-void exgcd(ll a,ll b,ll &x,ll &y)   //扩展欧几里得算法
+void exgcd(ll a, ll b)   //扩展欧几里得算法
 {
-    if(b==0)
+    if(b == 0)
     {
-        x=1;
-        y=0;
+        x = 1;
+        y = 0;
         return ;
     }
-    exgcd(b,a%b,y,x);
-    y-=a/b*x;
+    exgcd(b, a%b);
+    ll tx = x;
+    x = y;
+    y = tx - a / b * y;
 }
 
 int main()
 {
-    cin>>a>>b;
-    ll d=gcd(a,b);
-    
-
+    cin >> a >> b;
+    exgcd(a, b);
+    x = (x % b + b) % b;
+    cout << x;
 
     return 0;
 }
