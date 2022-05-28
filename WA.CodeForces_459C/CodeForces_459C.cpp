@@ -6,11 +6,11 @@ typedef long long ll;
 #define max(a,b) a>b?a:b
 #define min(a,b) a<b?a:b
 
-unsigned long long n,k,d,a[1010];
+unsigned long long n,k,d,a[1010],ans[1010][1010];
 
-unsigned long long binpow(long long a,long long b)
+unsigned binpow(unsigned long long a,unsigned long long b)
 {
-    long long res = 1;
+    unsigned long long res = 1;
     while(b>0) 
     {
         if(b&1)
@@ -28,15 +28,14 @@ int main()
     cin>>n>>k>>d;
     if(binpow(k,d)<n)
     {
-        cout<<"no";
+        cout<<"-1";
         return 0;   
     }
-    cout<<"yes"<<endl;
     for(int i=1;i<=n;i++)
     {
         for(int p=d;p>=1;p--)
         {
-            cout<<a[p]+1<<' ';
+            ans[i][p]=a[p]+1;
         }
         a[1]+=1;
         for(int p=1;a[p]+1>k;p++)
@@ -44,9 +43,14 @@ int main()
             a[p]=0;
             a[p+1]++;
         }
-        cout<<endl;
-
     }
-
+    for(int p=d;p>=1;p--)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            cout<<ans[i][p]<<' ';
+        }
+        cout<<endl;
+    }
     return 0;
 }

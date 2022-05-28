@@ -17,25 +17,40 @@ ll ans;
 
 map <char,node> m;
 
-bool vis[1000010];
-
-void msort(int b,int e)
+void msort(int s,int e)     //归并排序求逆序对
 {
-    if(b==e)
+    if(s==e)
+    {
         return;
-    int mid=(b+e)/2,i=b,j=mid+1,k=b;
-    msort(b,mid),msort(mid+1,e);
+    }
+    ll mid=(s+e)/2;
+    ll i=s,j=mid+1,k=s;
+    msort(s,mid);
+    msort(mid+1,e);
     while(i<=mid&&j<=e)
+    {
         if(a[i]<=a[j])
+        {
             c[k++]=a[i++];
+        }
         else
-            c[k++]=a[j++],ans+=mid-i+1;
+        {
+            c[k++]=a[j++];
+            ans+=mid-i+1;
+        }
+    }
     while(i<=mid)
+    {
         c[k++]=a[i++];
+    }
     while(j<=e)
+    {
         c[k++]=a[j++];
-    for(int l=b;l<=e;l++)
+    }
+    for(int l=s;l<=e;l++)
+    {
         a[l]=c[l];
+    }
 }
 
 int main()
