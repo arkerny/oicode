@@ -1,12 +1,12 @@
 Ham Team 1号成员, 创始人, 执行董事长
 
-以前叫 `Hacker_Nick`，然后发现有些平台不能打下划线和大写字母，于是改为 `hackernick233`
+以前叫 `Hacker_Nick`，然后发现有些平台不能打下划线和大写字母，于是改为 `arkerny`（Hacker_Nick的缩写
 
 来自 `Shaoxing, Zhejiang`
 
 AFO的OIer
 
-E-mail：`hackernick233@qq.com`（现在正在逐渐转移到这个账号里面） `hackernick@ham.ac.cn`（Ham Team的邮箱）`hackernick233@gmail.com`（国外注册用）
+E-mail：`arkerny@qq.com`（现在正在逐渐转移到这个账号里面） `hackernick@ham.ac.cn `（Ham Team的邮箱）`arkerny@gmail.com`（国外注册用）
 
 ```cpp
 2019-07-06 : 注册祭
@@ -39,11 +39,11 @@ $$
 \A\a{最小生成树}&\A\a{堆}&\A\a{快速排序}\\\hline
 \N\a{字符串哈希}& & \\\hline
 \t{普及/提高-- 模板}&\t{续表} &\t{续表} \\\hline
-\N\b{单调队列}&\N\b{三分法}&\N\b{矩阵快速幂} \\\hline
+\A\b{单调队列}&\N\b{三分法}&\N\b{矩阵快速幂} \\\hline
 \N\b{树状数组 1}&\N\b{乘法逆元}&\N\b{最近公共祖先} \\\hline
 \N\b{单源最短路径A}&\N\b{KMP字符串匹配}&\N\b{树状数组 2} \\\hline
 \N\b{线段树 1}&\N\b{矩阵加速（数列）}&\N\b{ST表} \\\hline
-\N\b{单源最短路径B}&\N\b{裴蜀定理}&\N\b{单调栈} \\\hline
+\N\b{单源最短路径B}&\N\b{裴蜀定理}&\A\b{单调栈} \\\hline
 \N\b{负环}&\\\hline
 \t{普及+ 模板}&\t{续表} &\t{续表} \\\hline
 \N\c{二元一次不定方程}&\N\c{乘法逆元2}&\N\c{康托展开}\\\hline
