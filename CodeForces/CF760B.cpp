@@ -4,22 +4,21 @@ typedef long long ll;
 #define il inline
 #define IOS ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 
-int n,m,k;
+ll n,m,k;
 
-bool check(int mid)
+bool check(ll mid)
 {
-    int tmp=k+mid-1;
-    int sum=0;
-    if(tmp>n)
+    ll x=k+mid-1,sum=0;
+    if(x>n)
     {
         sum+=(mid+mid-n+k)*(n-k+1)/2;
-    } 
+    }
     else
     {
         sum+=(mid+1)*mid/2+n-k-mid+1;
     }
-    tmp=k-mid+1;
-    if(tmp<1)
+    x=k-mid+1;
+    if(x<1)
     {
         sum+=(mid+mid-k)*(k-1)/2;
     }
@@ -33,10 +32,10 @@ bool check(int mid)
 int main()
 {
     cin>>n>>m>>k;
-    int l=1,r=m,ans;
+    ll l=1,r=m,ans;
     while(l<=r)
     {
-        int mid=(l+r)>>1;
+        ll mid=(l+r)>>1;
         if(check(mid))
         {
             ans=mid;
@@ -46,7 +45,7 @@ int main()
         {
             r=mid-1;
         }
-    } 
+    }
     cout<<ans;
     return 0;
 }
