@@ -3,13 +3,10 @@ using namespace std;
 typedef long long ll;
 #define il inline
 #define IOS ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define max(a,b) a>b?a:b
-#define min(a,b) a<b?a:b
 
-int a[1000010],tmp[1000010],len;
+int n,a[500010],tmp[500010];
+
 ll ans;
-
-map <ll,ll> m;
 
 void msort(int l,int r)
 {
@@ -26,7 +23,6 @@ void msort(int l,int r)
         if(a[i]>a[j])
         {
             ans+=mid-i+1;
-            ans=ans%99999997;
             tmp[pos++]=a[j++];
         }
         else
@@ -50,22 +46,12 @@ void msort(int l,int r)
 
 int main()
 {
-    cin>>len;
-    ll tmp;
-    for(int i=1;i<=len;i++)
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
     {
-        cin>>tmp;
-        m[tmp]=i;
+        scanf("%d",&a[i]);
     }
-    for(int i=1;i<=len;i++)
-    {
-        cin>>tmp;
-        a[i]=m[tmp];
-        m[tmp]=-1;
-    }
-
-    msort(1,len);
-    cout<<ans;
-
+    msort(1,n);
+    printf("%lld",ans);
     return 0;
 }
