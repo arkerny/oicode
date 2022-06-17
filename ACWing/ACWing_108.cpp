@@ -7,7 +7,7 @@ typedef long long ll;
 #define min(a,b) a<b?a:b
 ll ans,n,m,a[250010],b[250010],tmp[250010];
 
-void msort(ll a[],ll l,ll r)     //归并排序求逆序对
+void msort(ll a[],ll l,ll r)
 {
     if(l==r)
     {
@@ -16,24 +16,33 @@ void msort(ll a[],ll l,ll r)     //归并排序求逆序对
     ll mid=(l+r)>>1;
     msort(a,l,mid);
     msort(a,mid+1,r);
-    ll i=l,j=mid+1;
-    for(ll k=l;k<=r;k++)
+    ll i=l,j=mid+1,pos=l;
+    while(i<=mid&&j<=r)
     {
-        if(j>r||i<=mid&&a[i]<=a[j])
+        if(a[i]>a[j])
         {
-            tmp[k]=a[i++];
+            ans+=mid-i+1;
+            tmp[pos++]=a[j++];
         }
         else
         {
-            ans+=mid-i+1;
-            tmp[k]=a[j++];
+            tmp[pos++]=a[i++];
         }
     }
-    for(ll k=l;k<=r;k++)
+    while(i<=mid)
     {
-        a[k]=tmp[k];
+        tmp[pos++]=a[i++];
+    }
+    while(j<=r)
+    {
+        tmp[pos++]=a[j++];
+    }
+    for(int i=l;i<=r;i++)
+    {
+        a[i]=tmp[i];
     }
 }
+
 int main()
 {
     while(cin>>n)
