@@ -6,7 +6,7 @@ def Add_URL(URL):
 Flag = False
 
 os.system('git config --global user.email "2025440965@qq.com"')
-os.system('git config --global user.name "hackernick233"')
+os.system('git config --global user.name "arkerny"')
 os.system("git remote -v")
 while True:
     print("Please Input Origin You Want to Remove (Input EOF to Exit) :")
