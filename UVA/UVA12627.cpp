@@ -3,21 +3,32 @@ using namespace std;
 typedef long long ll;
 #define il inline
 #define IOS ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define lowbit(_x) (_x&-_x)
+#define fo(_v,_a,_b) for(int _v=_a;_v<=_b;_v++)
+#define fr(_v,_a,_b) for(int _v=_a;_v>=_b;_v--)
+#define foo(_v,_a,_b,_c) for(int _v=_a;_v<=_b;_v+=_c)
+#define frr(_v,_a,_b,_c) for(int _v=_a;_v>=_b;_v-=_c)
 
-ll n,a,b;
+ll k,a,b;
 ll f[31];
 ll ans;
 
-void init()
+ll binpow(ll a,ll b)
 {
-    for(int i=1;i<=30;i++)
+    ll res=1;
+    while(b>0) 
     {
-        f[i]=3*f[i-1];
+        if(b&1)
+        {
+            res=res*a;
+        }
+        a=a*a;
+        b>>=1;
     }
-    return ;
+    return res;
 }
 
-void fun(int num,int l,int r)
+void fun(ll num,ll l,ll r)
 {
     if(a<=l&&b>=r)
     {
@@ -36,18 +47,19 @@ void fun(int num,int l,int r)
 
 int main()
 {
-    int T;
-    scanf("%d",&T);
     f[0]=1;
-    init();
-    int i=1;
-    while(T--)
+    fo(i,1,30)
     {
-        scanf("%d%d%d",&n,&a,&b);
+        f[i]=3*f[i-1];
+    }
+    ll T;
+    scanf("%lld",&T);
+    fo(i,1,T)
+    {
+        scanf("%lld%lld%lld",&k,&a,&b);
         ans=0;
-        fun(f[n],1,pow(2,n));
-        printf("Case %d: %d\n",i,ans);
-        i++;
+        fun(f[k],1,binpow(2,k));
+        printf("Case %lld: %lld\n",i,ans);
     }
     return 0;
 }
