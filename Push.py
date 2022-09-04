@@ -8,4 +8,4 @@ if Commit_Message == "time":
 
 os.system("git add .")
 os.system("git commit -m " + '"' + Commit_Message + '"')
-os.system("git push all master")
+os.system("git push origin main")
