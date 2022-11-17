@@ -10,12 +10,39 @@ typedef long long ll;
 #define frr(_var,_a,_b,_c) for(int _var=_a;_var>=_b;_var-=_c)
 #define clr(_arr,_val) memset(_arr,_val,sizeof(_arr));
 
-
+int n;
+int a[1000010],cnt;
 
 int main()
 {
+    scanf("%d",&n);
+    fo(i,1,n)
+    {
+        scanf("%d",&a[i]);
+        if(a[i]==-1)
+        {
+            cnt++;
+        }
+    }
+    int len=min(cnt,n-cnt);
+    fo(i,1,len)
+    {
+        printf("1 -1 ");
+    }
+    if(cnt<n-cnt)
+    {
+        fo(i,1,n-2*len)
+        {
+            printf("1 ");
+        }
+    }
+    else
+    {
+        fo(i,1,n-2*len)
+        {
+            printf("-1 ");
+        }
+    }
     
-    
-
     return 0;
 }
