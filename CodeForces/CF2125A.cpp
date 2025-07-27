@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define il inline
+#define IOS ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define lowbit(_x) (_x&-_x)
+#define fo(_var,_a,_b) for(int _var=_a;_var<=_b;_var++)
+#define fr(_var,_a,_b) for(int _var=_a;_var>=_b;_var--)
+#define foo(_var,_a,_b,_c) for(int _var=_a;_var<=_b;_var+=_c)
+#define frr(_var,_a,_b,_c) for(int _var=_a;_var>=_b;_var-=_c)
+
+char s[200010];
+
+int a[26];
+
+void init()
+{
+    fo(i,0,25)
+    {
+        a[i]=0;
+    }
+    return ;
+}
+
+void solve()
+{
+    init();
+    scanf("%s",s);
+    int len = strlen(s);
+    fo(i,0,len-1)
+    {
+        a[s[i]-'A']++;
+    }
+    int sum1=0;
+    int sum2=a['F'-'A']+a['T'-'A'];
+    fo(i,1,sum2)
+    {
+        if(a['F'-'A']!=0)
+        {
+            a['F'-'A']--;
+            cout<<'F';
+        }
+        if(a['T'-'A']!=0)
+        {
+            a['T'-'A']--;
+            cout<<'T';
+        }
+    }
+    fo(i,0,25)
+    {
+        fo(j,1,a[i])
+        {
+            cout<<char(i+'A');
+        }
+    }
+    putchar('\n');
+    return ;
+}
+
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("CF2125A.in","r",stdin);
+    // freopen(".out","w",stdout);
+    #endif
+    int T;
+    scanf("%d",&T);
+    while(T--)
+    {
+        solve();
+    }
+    return 0;
+}
